@@ -7,8 +7,10 @@ import locale
 locale.setlocale(locale.LC_ALL, '')
 
 DATA_FILE = sys.argv[1]
+OUT_FILE = sys.argv[2]
+
 CUTOFF = 100000
-EXCEPT_POSITIONS = ["Principal", "Director Virtual"]
+EXCEPT_POSITIONS = [] #["Principal", "Director Virtual"]
 
 by_year = {}
 
@@ -40,7 +42,7 @@ with open(DATA_FILE, newline='') as csvfile:
 
 
 last_payroll = None
-with open("Non-Principal Payroll Over 100k.csv", "w", newline='') as csvfile:
+with open(OUT_FILE, "w", newline='') as csvfile:
     csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
     csvwriter.writerow(["Year", "# Positions", "Total Salary", "% Increase YoY"])
     
