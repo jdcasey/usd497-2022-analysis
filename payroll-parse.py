@@ -9,8 +9,16 @@ locale.setlocale(locale.LC_ALL, '')
 DATA_FILE = sys.argv[1]
 OUT_FILE = sys.argv[2]
 
-CUTOFF = 100000
-EXCEPT_POSITIONS = [] #["Principal", "Director Virtual"]
+### Use these for Non-Principal Payroll over $100k
+#CUTOFF = 100000
+#EXCEPT_POSITIONS = ["Principal", "Director Virtual"]
+
+### Use these for Teacher / Classified Payroll
+CUTOFF = 10000
+EXCEPT_POSITIONS = [
+    "Principal", "Director", "Dir", "Engineer", "Consultant", "Coordinator", "Analyst", "Supervisor", "Manager",
+    "Psychometrician"
+]
 
 by_year = {}
 
