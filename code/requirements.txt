@@ -1,0 +1,7 @@
+ruamel.yaml
+click
+tabula-py
+pandas
+numpy
+xlrd
+black
